@@ -1,0 +1,9 @@
+[package]
+name = "game"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+break-eternity = "0.1.1"
+dioxus = "0.4.0"
+dioxus-web = "0.4.0"

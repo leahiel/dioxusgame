@@ -1,0 +1,20 @@
+# Compiled
+/target
+
+# Folders
+-EPUB
+-PRAYERS
+-UNPUBLISHED
+-VIDEOS
+
+# Media File Types
+*.mov
+*.wav
+*.jpeg
+
+# Specific Documents
+.doccmds
+-TODO
+
+# Specified Documents and Folders (usually WIP)
+*-nolink
