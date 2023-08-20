@@ -4,24 +4,23 @@
 /// Actions are generally always available.
 
 use dioxus::prelude::*;
-use break_eternity::Decimal;
 
 use crate::Action;
-use crate::Resources;
 
 // TODO: Lock out a resource after clicking on it until holding-down-tick-time. Allow holding to proc resource upgrade.
 
 pub fn ActionsComponent(cx: Scope) -> Element {
     
     let actions = use_shared_state::<Vec<Action>>(cx).unwrap();
-    let resources = use_shared_state::<Resources>(cx).unwrap();
-
+    
     cx.render(rsx! {
 
         // for action in cx.Actions, render
         for action in &*actions.read() {
             div {
                 "{action.title}"
+                br {}
+                "{action.costresources[0].name}"
             }
         }
 
