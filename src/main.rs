@@ -3,6 +3,7 @@
 use dioxus::prelude::*;
 
 mod titlebar;
+
 use titlebar::TitleBar;
 mod footbar;
 use footbar::FootBar;
@@ -10,6 +11,8 @@ mod action;
 use action::*;
 mod comp_actions;
 use comp_actions::ActionsComponent;
+mod comp_resourcebar;
+use comp_resourcebar::ResourceBarComponent;
 mod resource;
 
 
@@ -32,9 +35,11 @@ fn App(cx: Scope) -> Element {
         // TODO Do include stylesheet properly.
         style { include_str!("assets/css/stylepage.css")}
         TitleBar {}
-        div { id: "main-component",
+        div { 
+            id: "main-component",
             ActionsComponent {}
         }
+        ResourceBarComponent {}
         FootBar {}
     })
 }

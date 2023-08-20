@@ -83,3 +83,37 @@ body {
 
     text-align: center;
 }
+
+#resource-bar {
+    position: fixed;
+    bottom: var(--foot-bar-height);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    height: var(--foot-bar-height);
+    width: 100vw;
+
+    /* PLACEHOLDER */
+    background-color: rgb(71, 195, 57);
+}
+
+.resource-bar-resource {
+    margin: 0 2%;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-bar-resource-name {
+    font-size: 0.8rem;
+}
+
+.resource-bar-resource-amount {
+    font-size: 100%;
+}

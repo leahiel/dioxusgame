@@ -37,8 +37,8 @@ pub fn init_resources(cx: Scope) {
     let mut resources_hashmap: HashMap<&'static str, Resource> = HashMap::new();
 
     // Add Resources to HashMap
-    resources_hashmap.insert("destiny", Resource { name: "destiny", amountcurrent: Decimal::from_number(10.0), ..Default::default()});
-    resources_hashmap.insert("energy", Resource { name: "energy", ..Default::default()});
+    resources_hashmap.insert("destiny", Resource { name: "Destiny", amountcurrent: Decimal::from_number(10.0), ..Default::default()});
+    resources_hashmap.insert("energy", Resource { name: "Energy", ..Default::default()});
 
     // Give HashMap to SharedState.
     use_shared_state_provider(cx, || resources_hashmap);
