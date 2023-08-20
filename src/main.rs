@@ -19,15 +19,6 @@ fn main() {
     dioxus_web::launch(App);
 }
 
-// Make Title Bar [Appears on every thing]
-// Make Main Page Section [Changes]
-    // Make button thing.
-    // Make Resource Thing
-// Make Footer Bar [Appears on every thing.]
-
-// TODO: state update should only occur n times a second, so make a "update state preview" and then update state with preview every deltatime. Updating state requires re-renders, which is oopsies daisies.
-// I will just write_silently(), and then have a coroutine that write()s every n time.
-
 fn App(cx: Scope) -> Element {
     // Initialization
     resource::init_resources(cx);

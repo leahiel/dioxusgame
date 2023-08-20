@@ -1,14 +1,13 @@
-#![allow(non_snake_case)]
-
-use std::collections::HashMap;
-
-/// This is all the information for Actions.
+/// Actions are clickable events that manipulate Resources when used.
+/// Not to be confused with: Story_Actions.
 
 use dioxus::prelude::*;
+use std::collections::HashMap;
 use break_eternity::Decimal;
 
 use crate::resource::Resource;
 
+#[derive(Clone)]
 pub struct Action {
     // Able to be clicked
     pub available: bool,
@@ -35,15 +34,13 @@ pub struct Action {
     pub costamounts: Vec<Decimal>,
 
     // The resource cost types of the action.
-    pub costresources: Vec<Resource>, // NYI
-    // pub costresources: Vec<&'static str>,
+    pub costresources: Vec<Resource>,
 
     // The resource result amounts of the action.
     pub resultamounts: Vec<Decimal>,
 
     // The resource result types of the action.
-    pub resultresources: Vec<Resource>, // NYI
-    // pub resultresources: Vec<&'static str>,
+    pub resultresources: Vec<Resource>,
 }
 
 impl Default for Action {
@@ -64,15 +61,26 @@ impl Default for Action {
     }
 }
 
-// Put all actions into one iterator for later use.
+/// Creates a HashMap [key: &'static str, value: Action]
+/// 
+/// This HashMap contains every Action, which is then added to the shared state.
+/// 
+/// Access with:
+/// ```
+/// let mut varname = use_shared_state::<HashMap<&'static str, Action>>(cx).unwrap().read();
+/// ```
 pub fn init_actions(cx: Scope) {
+    // Load Resources for use in Actions
     let resources = use_shared_state::<HashMap<&'static str, Resource>>(cx).unwrap().read();
 
+    // Create Action HashMap
+    let mut actions_hashmap: HashMap<&'static str, Action> = HashMap::new();
 
-    let mut actions_iterator: Vec<Action> = Vec::new();
-    actions_iterator.push(Action { available: true, title: "action1t", costresources: vec![resources["destiny"]], ..Default::default()});
+    // Add Actions to HashMap
+    actions_hashmap.insert("action1", Action { available: true, title: "action1t", costresources: vec![resources["destiny"]], ..Default::default()});
 
-    use_shared_state_provider(cx, || actions_iterator);
+    // Give HashMap to SharedState.
+    use_shared_state_provider(cx, || actions_hashmap);
 }
 
 // NOTE For updating the game with new/more actions, I will need to find all Actions not in the cx and add them one at a time.

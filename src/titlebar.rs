@@ -1,4 +1,3 @@
-#![allow(non_snake_case)]
 use dioxus::prelude::*;
 
 pub fn TitleBar(cx: Scope) -> Element {

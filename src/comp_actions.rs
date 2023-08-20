@@ -1,9 +1,7 @@
-#![allow(non_snake_case)]
-
 /// This is the main Actions component. Any non-Story related actions should occur here.
-/// Actions are generally always available.
 
 use dioxus::prelude::*;
+use std::collections::HashMap;
 
 use crate::Action;
 
@@ -11,12 +9,11 @@ use crate::Action;
 
 pub fn ActionsComponent(cx: Scope) -> Element {
     
-    let actions = use_shared_state::<Vec<Action>>(cx).unwrap();
+    let actions = use_shared_state::<HashMap<&'static str, Action>>(cx).unwrap().read();
     
     cx.render(rsx! {
-
-        // for action in cx.Actions, render
-        for action in &*actions.read() {
+        // Render every available Action.
+        for (_, action) in &*actions {
             div {
                 "{action.title}"
                 br {}
