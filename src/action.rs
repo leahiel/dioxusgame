@@ -53,10 +53,10 @@ impl Default for Action {
             discovered: true, 
             title: "UNNAMED_ACTION", 
             description: "UNDESCRIPTED_ACTION_DESCRIPTION",
-            costamounts: vec![Decimal::from_number(1.0)],
             costresources: vec![Resource { ..Default::default() }],
-            resultamounts: vec![Decimal::from_number(2.0)],
+            costamounts: vec![Decimal::from_number(1.0)],
             resultresources: vec![Resource { ..Default::default() }],
+            resultamounts: vec![Decimal::from_number(2.0)],
        }
     }
 }

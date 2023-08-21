@@ -21,7 +21,7 @@ pub fn ResourceBarComponent(cx: Scope) -> Element {
                     }
                     span {
                         class: "resource-bar-resource-amount",
-                        "{resource.amountcurrent} / {resource.amountmax}"
+                        "{resource.amountcurrent.floor()} / {resource.amountmax.floor()}"
                     }
                 }
             }

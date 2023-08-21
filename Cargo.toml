@@ -7,3 +7,7 @@ edition = "2021"
 break-eternity = "0.1.1"
 dioxus = "0.4.0"
 dioxus-web = "0.4.0"
+gloo = { version = "0.10.0", features = ["timers", "futures"] }
+js-sys = "0.3.64"
+log = "0.4.6"
+wasm-logger = "0.2.0"
