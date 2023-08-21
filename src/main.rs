@@ -14,6 +14,7 @@ use comp_actions::ActionsComponent;
 mod comp_resourcebar;
 use comp_resourcebar::ResourceBarComponent;
 mod resource;
+use resource::*;
 
 
 

@@ -9,7 +9,7 @@ pub fn ResourceBarComponent(cx: Scope) -> Element {
     let resources = use_shared_state::<HashMap<&'static str, Resource>>(cx).unwrap().read();
 
     cx.render(rsx! {
-        // Render every available Action.
+        // Render every available Resource.
         div {
             id: "resource-bar",
             for (_, resource) in &*resources {
