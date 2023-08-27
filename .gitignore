@@ -16,7 +16,6 @@ cargo.lock
 
 # Specific Documents
 .doccmds
--TODO
 
 # Specified Documents and Folders (usually WIP)
 *-nolink

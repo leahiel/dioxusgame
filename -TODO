@@ -1,0 +1,13 @@
+Implement Resources
+Implement ticktock
+    State update should only occur n times a second, so make a "update state preview" and then update state with preview every deltatime. Updating state requires re-renders, which is oopsies daisies.
+    I will just write_silently(), and then have a coroutine that write()s every n time.
+
+Implement resources-giving-you-more-resource
+
+
+
+
+
+
+Build world trees as a meta-meta mechanic that gather destiny? Or perhaps cities instead?
