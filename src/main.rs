@@ -30,6 +30,7 @@ fn App(cx: Scope) -> Element {
 
     // Start gameloop.
     // TODO: Put last_tick in cx.
+    // TODO: Or, update all resources here?
     let mut last_tick = Date::now();
     use_future(cx, (), |_| async move {
         loop {

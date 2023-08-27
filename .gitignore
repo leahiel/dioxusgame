@@ -1,6 +1,7 @@
 # Compiled
 /target
 /dist
+cargo.lock
 
 # Folders
 -EPUB
